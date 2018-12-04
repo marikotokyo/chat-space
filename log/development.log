@@ -4805,3 +4805,246 @@ Processing by MessagesController#index as HTML
 Completed 200 OK in 92ms (Views: 83.6ms | ActiveRecord: 2.8ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-12-04 21:00:36 +0900
+  [1m[35m (2.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ vendor/bundle/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ vendor/bundle/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendering groups/index.html.haml within layouts/application
+  [1m[36mGroup Load (11.9ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `group_users` ON `groups`.`id` = `group_users`.`group_id` WHERE `group_users`.`user_id` = 1[0m
+  ↳ app/views/shared/_side_bar.html.haml:13
+  [1m[36mMessage Load (0.9ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 1 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  [1m[36mMessage Load (1.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 2 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 3 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  Rendered shared/_side_bar.html.haml (74.4ms)
+  Rendered groups/index.html.haml within layouts/application (121.3ms)
+  Rendered layouts/_notifications.html.haml (5.4ms)
+Completed 200 OK in 369ms (Views: 310.9ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-04 21:38:30 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ vendor/bundle/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ vendor/bundle/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  Rendering groups/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.8ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `group_users` ON `groups`.`id` = `group_users`.`group_id` WHERE `group_users`.`user_id` = 1[0m
+  ↳ app/views/shared/_side_bar.html.haml:13
+  [1m[36mMessage Load (1.2ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 1 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 2 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 3 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  Rendered shared/_side_bar.html.haml (268.6ms)
+  Rendered groups/index.html.haml within layouts/application (301.9ms)
+  Rendered layouts/_notifications.html.haml (3.7ms)
+Completed 200 OK in 2306ms (Views: 2058.7ms | ActiveRecord: 161.7ms)
+
+
+Started GET "/groups/2/messages" for 127.0.0.1 at 2018-12-04 21:38:39 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ vendor/bundle/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (1.7ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:30
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `group_users` ON `groups`.`id` = `group_users`.`group_id` WHERE `group_users`.`user_id` = 1[0m
+  ↳ app/views/shared/_side_bar.html.haml:13
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 1 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 2 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 3 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  Rendered shared/_side_bar.html.haml (15.6ms)
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 2[0m
+  ↳ app/views/messages/index.html.haml:22
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered messages/index.html.haml within layouts/application (33.1ms)
+  Rendered layouts/_notifications.html.haml (1.9ms)
+Completed 200 OK in 101ms (Views: 67.2ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/groups/2/messages" for 127.0.0.1 at 2018-12-04 21:38:46 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lYXvHLvJxywGkmsQ/vgnSGBolbZcT0Bg3tUCAEzGXd4rjVfY3CP27yq7TYpxeMwuL8S8HatlwmuRgBMxrVa8sw==", "message"=>{"content"=>"こんにちは"}, "commit"=>"Send", "group_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ vendor/bundle/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:11
+  [1m[36mMessage Create (0.5ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `group_id`, `user_id`, `created_at`, `updated_at`) VALUES ('こんにちは', 2, 1, '2018-12-04 12:38:46', '2018-12-04 12:38:46')[0m
+  ↳ app/controllers/messages_controller.rb:11
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:11
+Redirected to http://localhost:3000/groups/2/messages
+Completed 302 Found in 19ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/groups/2/messages" for 127.0.0.1 at 2018-12-04 21:38:46 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ vendor/bundle/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:30
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `group_users` ON `groups`.`id` = `group_users`.`group_id` WHERE `group_users`.`user_id` = 1[0m
+  ↳ app/views/shared/_side_bar.html.haml:13
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 1 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 2 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 3 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  Rendered shared/_side_bar.html.haml (13.8ms)
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 2[0m
+  ↳ app/views/messages/index.html.haml:22
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/messages/index.html.haml:22
+  Rendered collection of messages/_message.html.haml [1 times] (3.9ms)
+  Rendered messages/index.html.haml within layouts/application (48.5ms)
+  Rendered layouts/_notifications.html.haml (1.6ms)
+Completed 200 OK in 110ms (Views: 97.9ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/groups/2/messages" for 127.0.0.1 at 2018-12-04 21:38:52 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7PrtPKO2662Kdx/9kQWnhH2wiwhqXGGCBM8s6O7CfLFS8lX4xFzabqZeOWcehUziMhyio51244lLmj3ZD1Kd3A==", "message"=>{"content"=>"こんばんは"}, "commit"=>"Send", "group_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ vendor/bundle/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:11
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `group_id`, `user_id`, `created_at`, `updated_at`) VALUES ('こんばんは', 2, 1, '2018-12-04 12:38:52', '2018-12-04 12:38:52')[0m
+  ↳ app/controllers/messages_controller.rb:11
+  [1m[35m (39.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:11
+Redirected to http://localhost:3000/groups/2/messages
+Completed 302 Found in 53ms (ActiveRecord: 41.5ms)
+
+
+Started GET "/groups/2/messages" for 127.0.0.1 at 2018-12-04 21:38:52 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ vendor/bundle/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:30
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `group_users` ON `groups`.`id` = `group_users`.`group_id` WHERE `group_users`.`user_id` = 1[0m
+  ↳ app/views/shared/_side_bar.html.haml:13
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 1 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 2 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 3 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  Rendered shared/_side_bar.html.haml (19.4ms)
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 2[0m
+  ↳ app/views/messages/index.html.haml:22
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/messages/index.html.haml:22
+  Rendered collection of messages/_message.html.haml [2 times] (3.0ms)
+  Rendered messages/index.html.haml within layouts/application (42.1ms)
+  Rendered layouts/_notifications.html.haml (1.9ms)
+Completed 200 OK in 87ms (Views: 78.3ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/groups/2/messages" for 127.0.0.1 at 2018-12-04 21:39:11 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T9c6z3sFJfWlMUFQ6ACVFvoFMZ6+NNtfUOlXZDt2YPrx34ILHO8UNokYZ8pngH5wtakYNUkeWVQfvEZV2uaBlw==", "message"=>{"content"=>"やったー"}, "commit"=>"Send", "group_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ vendor/bundle/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:30
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:11
+  [1m[36mMessage Create (0.7ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `group_id`, `user_id`, `created_at`, `updated_at`) VALUES ('やったー', 2, 1, '2018-12-04 12:39:11', '2018-12-04 12:39:11')[0m
+  ↳ app/controllers/messages_controller.rb:11
+  [1m[35m (41.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:11
+Redirected to http://localhost:3000/groups/2/messages
+Completed 302 Found in 57ms (ActiveRecord: 43.6ms)
+
+
+Started GET "/groups/2/messages" for 127.0.0.1 at 2018-12-04 21:39:11 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ vendor/bundle/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:30
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.8ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `group_users` ON `groups`.`id` = `group_users`.`group_id` WHERE `group_users`.`user_id` = 1[0m
+  ↳ app/views/shared/_side_bar.html.haml:13
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 1 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 2 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 3 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  Rendered shared/_side_bar.html.haml (19.6ms)
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 2[0m
+  ↳ app/views/messages/index.html.haml:22
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/messages/index.html.haml:22
+  Rendered collection of messages/_message.html.haml [3 times] (3.5ms)
+  Rendered messages/index.html.haml within layouts/application (39.8ms)
+  Rendered layouts/_notifications.html.haml (2.2ms)
+Completed 200 OK in 99ms (Views: 88.3ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/groups/2/messages" for 127.0.0.1 at 2018-12-04 21:39:18 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gI31yoDZ/8GF0Vfl55+2SQCgcKfSFrcVWeYlP/pN9LE+hU0O5zPOAqn4cX9oH10vTwxZDCU8NR4WszQOG90V3A==", "message"=>{"content"=>"できた？"}, "commit"=>"Send", "group_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ vendor/bundle/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:11
+  [1m[36mMessage Create (0.5ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `group_id`, `user_id`, `created_at`, `updated_at`) VALUES ('できた？', 2, 1, '2018-12-04 12:39:18', '2018-12-04 12:39:18')[0m
+  ↳ app/controllers/messages_controller.rb:11
+  [1m[35m (40.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:11
+Redirected to http://localhost:3000/groups/2/messages
+Completed 302 Found in 52ms (ActiveRecord: 41.5ms)
+
+
+Started GET "/groups/2/messages" for 127.0.0.1 at 2018-12-04 21:39:18 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ vendor/bundle/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:30
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `group_users` ON `groups`.`id` = `group_users`.`group_id` WHERE `group_users`.`user_id` = 1[0m
+  ↳ app/views/shared/_side_bar.html.haml:13
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 1 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 2 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 3 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  ↳ app/models/group.rb:8
+  Rendered shared/_side_bar.html.haml (15.5ms)
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 2[0m
+  ↳ app/views/messages/index.html.haml:22
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/messages/index.html.haml:22
+  Rendered collection of messages/_message.html.haml [4 times] (3.8ms)
+  Rendered messages/index.html.haml within layouts/application (38.1ms)
+  Rendered layouts/_notifications.html.haml (1.8ms)
+Completed 200 OK in 85ms (Views: 73.9ms | ActiveRecord: 3.2ms)
+
+
