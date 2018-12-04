@@ -12,6 +12,7 @@
         margin-top: 35px;
       }
       &__members {
+        @include flexbox;
         color: #999;
         display: flex;
         font-size: 12px;
@@ -30,6 +31,10 @@
       line-height: 40px;
       margin-top: 28px;
       padding: 0 20px;
+      &__button {
+        color: $light_blue;
+        text-decoration: none;
+      }
     }
   }
 
