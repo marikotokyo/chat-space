@@ -38,7 +38,7 @@ function buildHTML(message){
         return html;
       };
     }
-$('.js-form').on('submit', function(){
+$('#new_message').on('submit', function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
