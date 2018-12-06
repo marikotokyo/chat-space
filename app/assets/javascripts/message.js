@@ -1,4 +1,5 @@
-function buildHTML(message){
+$(function(){
+  function buildHTML(message){
       if ( message.image ) {
         var html =
          `<div class="message" data-message-id=${message.id}>
@@ -38,7 +39,7 @@ function buildHTML(message){
         return html;
       };
     }
-$('#new_message').on('submit', function(){
+$('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
