@@ -6,4 +6,7 @@ spec/support/*/public/javascripts
 .bundle
 imports/*
 Gemfile.lock
+<<<<<<< HEAD
 vendor/bundle/*
+=======
+>>>>>>> master
