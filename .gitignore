@@ -1,4 +1,3 @@
-pkg
 tmp
 Gemfile.lock
 .bundle
@@ -7,3 +6,10 @@ concourse/private.yml
 concourse/mini_portile.final.yml
 public/uploads/*
 log/*
+
+pkg/*
+spec/support/*/Gemfile.lock
+spec/support/*/public/javascripts
+.ruby-version
+imports/*
+vendor/bundle/*
