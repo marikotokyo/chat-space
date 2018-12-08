@@ -16,7 +16,7 @@ $(document).on('turbolinks:load', function() {
                 ${message.content}
               </p>
             </div>
-            <asset_path src=${message.image} >
+              ${imagehtml}
           </div>`
         return html;
       };
@@ -41,9 +41,11 @@ $('#new_message').on('submit', function(e){
      })
      .fail(function(){
         alert('error');
-      });
-      return false;
-    });
+      })
+     .always(function(){
+      $(".form__submit").prop("disabled", false);
+     });
+    })
 
     var interval = setInterval(function(){
       if (window.location.href.match(/\/groups\/\d+\/messages/)){
