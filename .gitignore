@@ -12,3 +12,4 @@ spec/support/*/public/javascripts
 .ruby-version
 imports/*
 vendor/bundle/*
+/config/master.key
